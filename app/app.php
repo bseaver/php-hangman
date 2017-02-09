@@ -41,7 +41,21 @@
         if ($hangman->isLastGuessADuplicate()) {
             $output .= "<br> Last guess was a duplicate, you ...";
         }
-        
+
+        $hangman->guessALetter("f");
+        $hangman->guessALetter("l");
+        $hangman->guessALetter("a");
+        $hangman->guessALetter("e");
+        $hangman->guessALetter("r");
+        $hangman->guessALetter("g");
+        // $hangman->guessALetter("s");
+        $hangman->guessALetter("t");
+        $hangman->guessALetter("d");
+
+        // if ($hangman->didIWin()) {
+        //     $output .= "<br> You have won!";
+        // }
+
         $output .= "<br> wrongGuessCount = " . $hangman->wrongGuessCount();
         $output .= "<br> wordGuessedSoFar = " . $hangman->wordGuessedSoFar();
 
