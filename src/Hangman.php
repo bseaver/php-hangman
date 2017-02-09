@@ -17,15 +17,18 @@
             $word_letters = str_split($this->word_to_guess);
             $output = "";
             foreach ($word_letters as $letter) {
-                $output .= "_ ";
+                if (in_array($letter, $this->guessed_letters)) {
+                    $output .= $letter . " ";
+                } else {
+                    $output .= "_ ";
+                }
             }
-
             return $output;
         }
 
-        function guessALetter()
+        function guessALetter($new_letter)
         {
-
+            array_push($this->guessed_letters, $new_letter);
         }
 
         function wrongGuessCount()

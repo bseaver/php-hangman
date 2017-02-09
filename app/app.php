@@ -25,7 +25,7 @@
 
     $app->get('/test', function() {
         $hangman = new Hangman("flabbergasted", 7);
-
+        $hangman->guessALetter("b");
         $output = $hangman->wordGuessedSoFar();
 
         return "{ $output }";
