@@ -46,7 +46,14 @@
 
         function isLastGuessADuplicate()
         {
-
+            $guessed_letters_count = count($this->guessed_letters);
+            if ($guessed_letters_count < 2) {
+                return false;
+            } else {
+                $last_letter = $this->guessed_letters[$guessed_letters_count - 1];
+                $counts = array_count_values($this->guessed_letters);
+                return $counts[$last_letter] > 1;
+            }
         }
 
     }

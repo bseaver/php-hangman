@@ -29,10 +29,19 @@
 
         $hangman->guessALetter("b");
         $output .= "<br> guessed b";
+
         $hangman->guessALetter("i");
         $output .= "<br> guessed i";
+        if ($hangman->isLastGuessADuplicate()) {
+            $output .= "<br> Last guess was a duplicate, you ...";
+        }
+
         $hangman->guessALetter("i");
         $output .= "<br> guessed i";
+        if ($hangman->isLastGuessADuplicate()) {
+            $output .= "<br> Last guess was a duplicate, you ...";
+        }
+        
         $output .= "<br> wrongGuessCount = " . $hangman->wrongGuessCount();
         $output .= "<br> wordGuessedSoFar = " . $hangman->wordGuessedSoFar();
 
