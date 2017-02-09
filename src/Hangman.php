@@ -1,0 +1,42 @@
+<?php
+    class Hangman
+    {
+        private $word_to_guess;
+        private $guessed_letters;
+        private $max_wrong_guess_count;
+
+        function __construct($new_word_to_guess, $new_max_guess_count)
+        {
+            $this->word_to_guess = $new_word_to_guess;
+            $this->guessed_letters = array();
+            $this->max_wrong_guess_count = $new_max_guess_count;
+        }
+
+        function wordGuessedSoFar()
+        {
+            $word_letters = str_split($this->word_to_guess);
+            $output = "";
+            foreach ($word_letters as $letter) {
+                $output .= "_ ";
+            }
+
+            return $output;
+        }
+
+        function guessALetter()
+        {
+
+        }
+
+        function wrongGuessCount()
+        {
+
+        }
+
+        function isLastGuessADuplicate()
+        {
+
+        }
+
+    }
+?>

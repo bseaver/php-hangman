@@ -19,17 +19,18 @@
     );
 
     $app->get('/', function() use ($app) {
-
-
         return "Welcome to hangman!";
     });
 
-    $app->post('/', function() use ($app) {
 
+    $app->get('/test', function() {
+        $hangman = new Hangman("flabbergasted", 7);
 
-        return $app['twig']->render('view_all.html.twig');
+        $output = $hangman->wordGuessedSoFar();
+
+        return "{ $output }";
     });
 
-    return $app;
+        return $app;
 
 ?>

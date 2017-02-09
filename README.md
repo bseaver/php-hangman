@@ -44,6 +44,7 @@ This is a guessing game where the user will take turns guessing letters in a sec
 
 |Behavior|Input|Output|
 |--------|-----|------|
+| Show underscores | flabbergasted | _ _ _ _ _ _ _ _ _ _ _ _ _ |
 | Correct Letter | b | show 2 b's |
 | Incorrect Letter | i | show wrong guess count 1 |
 | Repeated guess | b (or i) | error message |
