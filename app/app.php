@@ -25,8 +25,16 @@
 
     $app->get('/test', function() {
         $hangman = new Hangman("flabbergasted", 7);
+        $output = "";
+
         $hangman->guessALetter("b");
-        $output = $hangman->wordGuessedSoFar();
+        $output .= "<br> guessed b";
+        $hangman->guessALetter("i");
+        $output .= "<br> guessed i";
+        $hangman->guessALetter("i");
+        $output .= "<br> guessed i";
+        $output .= "<br> wrongGuessCount = " . $hangman->wrongGuessCount();
+        $output .= "<br> wordGuessedSoFar = " . $hangman->wordGuessedSoFar();
 
         return "{ $output }";
     });

@@ -33,7 +33,14 @@
 
         function wrongGuessCount()
         {
-
+            $word_letters = str_split($this->word_to_guess);
+            $wrong_score = 0;
+            foreach ($this->guessed_letters as $letter) {
+                if (!in_array($letter, $word_letters)) {
+                    $wrong_score += 1;
+                }
+            }
+            return $wrong_score;
         }
 
         function isLastGuessADuplicate()
