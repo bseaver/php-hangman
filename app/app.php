@@ -19,7 +19,8 @@
     );
 
     $app->get('/', function() use ($app) {
-        return "Welcome to hangman!";
+
+        return $app['twig']->render('play_game.html.twig');
     });
 
 

@@ -54,4 +54,12 @@ This is a guessing game where the user will take turns guessing letters in a sec
 
 * Phase 2 - Create engaging front End with existing backend functionality
 
+* Show hanged man on main page
+
+* Show underscored word underneath empty hangman and start game
+
+* Ask for a letter guess
+
+* Output letter if correct, or update hangman until win or lose
+
 * End specifications
