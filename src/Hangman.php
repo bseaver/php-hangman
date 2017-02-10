@@ -68,11 +68,11 @@
         }
 
         function save() {
-            $_SESSION[HANGMAN_SESSION_KEY] = $this;
+            array_push($_SESSION[HANGMAN_SESSION_KEY], $this);
         }
 
         static function restore() {
-            return $_SESSION[HANGMAN_SESSION_KEY];
+            return array_pop($_SESSION[HANGMAN_SESSION_KEY]);
         }
     }
 ?>

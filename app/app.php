@@ -27,6 +27,16 @@
         return $app['twig']->render('play_game.html.twig', array("hangman" => $hangman));
     });
 
+    $app->post('/', function() use ($app) {
+        $hangman = Hangman::restore();
+        $new_letter = $_POST['new-letter'];
+
+        $hangman->guessALetter($new_letter);
+        $hangman->save();
+
+        return $app['twig']->render('play_game.html.twig', array("hangman" => $hangman));
+    });
+
 
     $app->get('/test', function() {
         $hangman = new Hangman("flabbergasted", 7);
