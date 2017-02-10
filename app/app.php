@@ -48,13 +48,15 @@
         $hangman->guessALetter("e");
         $hangman->guessALetter("r");
         $hangman->guessALetter("g");
-        // $hangman->guessALetter("s");
+        $hangman->guessALetter("s");
         $hangman->guessALetter("t");
         $hangman->guessALetter("d");
 
-        // if ($hangman->didIWin()) {
-        //     $output .= "<br> You have won!";
-        // }
+        if ($hangman->didIWin()) {
+            $output .= "<br> You have won!";
+        } else {
+            $output .= "<br> Keep Guessing!";
+        }
 
         $output .= "<br> wrongGuessCount = " . $hangman->wrongGuessCount();
         $output .= "<br> wordGuessedSoFar = " . $hangman->wordGuessedSoFar();

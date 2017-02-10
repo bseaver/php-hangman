@@ -56,5 +56,11 @@
             }
         }
 
+        function didIWin()
+        {
+            $word_letters = str_split($this->word_to_guess);
+            return !array_diff($word_letters, $this->guessed_letters);
+        }
+
     }
 ?>
