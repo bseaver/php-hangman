@@ -61,6 +61,38 @@
         $output .= "<br> wrongGuessCount = " . $hangman->wrongGuessCount();
         $output .= "<br> wordGuessedSoFar = " . $hangman->wordGuessedSoFar();
 
+        $output .= "<br><br><br>";
+        $hangman = new Hangman("catnip", 7);
+
+        $hangman->guessALetter("a");
+        $hangman->guessALetter("b");
+        $hangman->guessALetter("c");
+        $hangman->guessALetter("d");
+        $hangman->guessALetter("e");
+        $hangman->guessALetter("f");
+        $hangman->guessALetter("g");
+        $hangman->guessALetter("h");
+        $hangman->guessALetter("i");
+        $hangman->guessALetter("j");
+        $hangman->guessALetter("k");
+        $hangman->guessALetter("l");
+
+
+        if ($hangman->didIWin()) {
+            $output .= "<br> You have won!";
+        } else {
+            $output .= "<br> Keep Guessing!";
+        }
+
+        if ($hangman->didILose()) {
+            $output .= "<br> You lost! (sucker...)";
+        }
+
+        $output .= "<br> wrongGuessCount = " . $hangman->wrongGuessCount();
+        $output .= "<br> wordGuessedSoFar = " . $hangman->wordGuessedSoFar();
+
+
+
         return "{ $output }";
     });
 

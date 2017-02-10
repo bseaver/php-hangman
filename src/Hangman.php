@@ -62,5 +62,10 @@
             return !array_diff($word_letters, $this->guessed_letters);
         }
 
+        function didILose()
+        {
+            return $this->wrongGuessCount() >= $this->max_wrong_guess_count;
+        }
+
     }
 ?>
