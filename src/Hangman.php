@@ -67,5 +67,12 @@
             return $this->wrongGuessCount() >= $this->max_wrong_guess_count;
         }
 
+        function save() {
+            $_SESSION[HANGMAN_SESSION_KEY] = $this;
+        }
+
+        static function restore() {
+            return $_SESSION[HANGMAN_SESSION_KEY];
+        }
     }
 ?>

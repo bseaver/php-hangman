@@ -4,9 +4,9 @@
     require_once __DIR__."/../src/Hangman.php";
 
     session_start();
-    define('JOB_SESSION_KEY', 'hangman_game');
-    if (empty($_SESSION[JOB_SESSION_KEY])) {
-        $_SESSION[JOB_SESSION_KEY] = array();
+    define('HANGMAN_SESSION_KEY', 'hangman_game');
+    if (empty($_SESSION[HANGMAN_SESSION_KEY])) {
+        $_SESSION[HANGMAN_SESSION_KEY] = array();
     }
 
     $app = new Silex\Application();
@@ -18,9 +18,13 @@
         array('twig.path' => __DIR__.'/../views')
     );
 
-    $app->get('/', function() use ($app) {
+    $hangman = new Hangman("flabbergasted", 7);
+    $hangman->save();
 
-        return $app['twig']->render('play_game.html.twig');
+    $app->get('/', function() use ($app) {
+        $hangman = Hangman::restore();
+
+        return $app['twig']->render('play_game.html.twig', array("hangman" => $hangman));
     });
 
 
